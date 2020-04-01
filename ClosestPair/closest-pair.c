@@ -187,7 +187,7 @@ int main(void) {
 	FILE* fp=fopen("input.txt", "r");
 	char buff[20], *number;
 	if (fp == NULL) {
-		printf("Could not open file input.txt");
+		perror("Open file");
 		return 1;
 	}
 	//reading the file input.txt
@@ -209,7 +209,7 @@ int main(void) {
 	}
 	D min_node;
 	min_node = divide_and_conquer(nodes, 0, size-1);
-	printf("Closest pair (%d,%d) and (%d,%d) distance: %f", nodes[min_node.index1].x, nodes[min_node.index1].y,
+	printf("Closest pair (%d,%d) and (%d,%d) distance: %f\n", nodes[min_node.index1].x, nodes[min_node.index1].y,
 		nodes[min_node.index2].x,nodes[min_node.index2].y,min_node.distance);
 	return 0;
 }
